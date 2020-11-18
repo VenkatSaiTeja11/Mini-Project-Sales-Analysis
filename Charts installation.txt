@@ -4,4 +4,6 @@ Step 1 - Type the following command in your command prompt, composer require con
 Step 2 - After the completion of the installation, type the following command in your command prompt, 
 	php artisan vendor:publish --tag=charts_config
 
+Place the Charts folder in the app folder.
+
 Thats it!
