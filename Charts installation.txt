@@ -1,0 +1,7 @@
+
+Step 1 - Type the following command in your command prompt, composer require consoletvs/charts:6.* 
+
+Step 2 - After the completion of the installation, type the following command in your command prompt, 
+	php artisan vendor:publish --tag=charts_config
+
+Thats it!

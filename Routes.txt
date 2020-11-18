@@ -1,0 +1,8 @@
+Route::get('/seller_sales_analysis','App\Http\Controllers\SalesAnalysisController@sellerSalesAnalysis');
+Route::get('manufacturer_sales_analysis', 'App\Http\Controllers\SalesAnalysisController@manufacturerSalesAnalysis');
+
+Route::get('/seller_transaction_history', 'App\Http\Controllers\SalesAnalysisController@sellerTransactionHistory');
+Route::post('/seller_transaction_history', 'App\Http\Controllers\SalesAnalysisController@displaySellerTransactionHistory');
+
+Route::get('/manufacturer_transaction_history', 'App\Http\Controllers\SalesAnalysisController@manufacturerTransactionHistory');
+Route::post('/manufacturer_transaction_history', 'App\Http\Controllers\SalesAnalysisController@displayManufacturerTransactionHistory');
