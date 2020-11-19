@@ -15,14 +15,9 @@ class SalesAnalysisController extends Controller
         $ProfitPercentage = NULL; $Breakeven = NULL; $BreakevenMessage = NULL;
 
         //Invested Amount (30 Days)
-        $investedAmountTemp = DB::table('items_sold_seller')
-            ->select(DB::raw('sum(price * quantity_sold) as amount')) 
-            ->join('customer_details', function ($join) {
-                $join->on('items_sold_seller.customer_mobile', '=', 'customer_details.customer_mobile'); 
-            })->groupBy('date_of_transaction')
-            ->where('items_sold_seller.sold', '=', 1)
-            ->where('customer_details.sold', '=', 1)
-            ->where('items_sold_seller.sellers_email', '=', session('seller'))
+        $investedAmountTemp = DB::table('items_sold_manufacturer')
+            ->select(DB::raw('sum(selling_price * quantity) as amount')) 
+            ->where('sellers_email', '=', session('seller'))
             ->where('date_of_transaction', '>', Carbon::today()->subDays(30))
             ->get();
  
